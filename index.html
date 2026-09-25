@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VitalCheck agent</title>
+<link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>VitalCheck agent</h1>
+  <p class="sub">Proof of concept. Describe a patient in your own words, the agent will ask what it needs and log the assessment. Not validated for clinical use.</p>
+
+  <div class="setup">
+    <label for="apiKey">Anthropic API key</label>
+    <input type="password" id="apiKey" placeholder="sk-ant-...">
+    <div class="note">Stored only in your browser's local storage on this device, never sent anywhere but api.anthropic.com. Get a key at console.anthropic.com. Calls are billed to that key's account.</div>
+  </div>
+
+  <div class="chat" id="chat"></div>
+  <div class="inputRow">
+    <input type="text" id="input" placeholder="e.g. 45yo male, RR 26, SpO2 91% on room air, BP 100/70, HR 118, confused">
+    <button id="sendBtn">Send</button>
+  </div>
+  <div id="err" class="err"></div>
+
+  <div class="log">
+    <h2>Shift log</h2>
+    <div id="entries"><div class="empty">No logged assessments yet.</div></div>
+  </div>
+</div>
+
+<script src="src/app.js"></script>
+</body>
+</html>
